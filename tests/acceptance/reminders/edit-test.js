@@ -68,3 +68,19 @@ test('editing a reminder returns user to reminder item', function(assert) {
 
   });
 });
+
+
+test('unsaved changes show visual cue in reminders list', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/reminders/edit/1');
+
+  andThen(function() {
+    fillIn('.reminder-title', 'Hello World');
+  });
+
+  andThen(function() {
+    const title = find('.dirty');
+    assert.equal(title.length, 1);
+  });
+});

@@ -68,6 +68,11 @@ a {
     padding-top: 5px;
     padding-left: 40px;
     font-weight: 400;
+
+    &.dirty {
+      color: $red-1;
+      font-weight: 700;
+    }
   }
 
   .spec-reminder-list-item--date {
@@ -157,6 +162,10 @@ hr {
 
   &:hover {
     background-color: $undo-btn-hover-color;
+  }
+
+  .unsaved {
+    background-color: $orange-1;
   }
 }
 
